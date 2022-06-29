@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js"></script>
+    <style>
+    h1 {
+        font-family: 'Syncopate', sans-serif;
+        color: black;
+        text-transform: uppercase;
+        letter-spacing: 3vw;
+        line-height: 1.2;
+        font-size: 3vw;
+        text-align: center;
+    }
+
+    main {
+        background: rgba(0, 0, 0, 0.66);
+        color: white;
+        position: relative;
+        padding: 1rem;
+    }
+
+    main p {
+        max-width: 600px;
+        margin: 1rem auto;
+    }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand logo-image" href="/"><img src="{{url_for('static', filename='images/logo.svg')}}"
+                    alt="alternative" height="36"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/" style="font-size: 20px;">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./predict" style="font-size: 20px;">Prediction</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./about" style="font-size: 20px;">About us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./contact" style="font-size: 20px;">Contact us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="my-5">
+        <div class="py-5">
+            <h2 class="text-center">Fill the form for prediction.</h2>
+        </div>
+        <div class="w-50 m-auto">
+            <form action='/predict' method='POST'>
+                <div class="form-group">
+                    <label>Gender</label>
+                    <select name="gender" class="form-control">
+                        <option selected>select gender</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Married</label>
+                    <select name="married" class="form-control">
+                        <option selected>select married status</option>
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Dependents</label>
+                    <select name="dependents" class="form-control">
+                        <option selected>select dependents</option>
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="1">2</option>
+                        <option value="1">3+</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Education</label>
+                    <select name="education" class="form-control">
+                        <option selected>select education</option>
+                        <option value="0">Graduate</option>
+                        <option value="0">Not Graduate</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Self_Employed</label>
+                    <select name="self_employed" class="form-control">
+                        <option>select self_employed</option>
+                        <option>Yes</option>
+                        <option>No</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Credit_History</label>
+                    <select name="credit_history" class="form-control">
+                        <option>select credit_history</option>
+                        <option>0</option>
+                        <option>1</option>
+                    </select>
+                </div>
+                <divclass="form-group">
+                    <label>Property_Area</label>
+                    <select name="property_area" class="form-control">
+                        <option>select property_area</option>
+                        <option>Rural</option>
+                        <option>Semiurban</option>
+                        <option>Urban</option>
+                    </select>
+
+                    <div class="form-group">
+                        <label>Loan_Status</label>
+                        <select name="loan_status" class="form-control">
+                            <option>select Loan_Status</option>
+                            <option>Y</option>
+                            <option>N</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>ApplicantIncome</label>
+                        <input type="text" name="applicantincome" placeholder="ApplicantIncome" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label>CoapplicantIncome</label>
+                        <input type="text" name="coapplicantincome" placeholder="CoapplicantIncome"
+                            class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label>LoanAmount</label>
+                        <input type="text" name="loanamount" placeholder="LoanAmount" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label>Loan_Amount_Term</label>
+                        <input type="text" name="loan_amount_term" placeholder="Loan_Amount_Term" class="form-control">
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Predict</button>
+            </form>
+        </div>
+
+        <div>
+            <br><br>
+            <h1>{{prediction_text}}</h1>
+        </div>
+
+    </section>
+
+    <footer>
+        <p class="p-3 bg-dark text-white text-center">@kmindu</p>
+    </footer>
+
+</body>
+
+</html>
